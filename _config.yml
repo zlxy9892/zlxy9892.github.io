@@ -98,5 +98,11 @@ friends: [
     }, {
         title: "Zhihu",
         href: "http://zhihu.com/"
-    }
+    }, {
+        title: "scikit-learn",
+        href: "http://scikit-learn.org/"
+    }, {
+        title: "TensorFlow",
+        href: "https://www.tensorflow.org/"
+	}
 ]
