@@ -3,8 +3,8 @@ title: Nova Blog
 SEOTitle: Nova的博客 | Nova Blog
 header-img: img/home-bg.jpg
 email: zlxy9892@163.com
-description: "关于\'机器学习\'与\'学习机器\' | Frank，Web & Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Nova 的个人博客，与你一起发现更大的世界。"
-keyword: "FFF, AAA, Nova, Neutron, Diablo"
+description: "关于\'机器学习\'与\'学习机器\' | Nova，Machine Learning & Data Mining Lover, Learning Algorithm Designer | 这里是 @Nova 的个人博客，与你一起发现自主学习的魅力。"
+keyword: "Nova, Neutron, Diablo"
 url: "https://zlxy9892.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -67,8 +67,8 @@ ga_domain: huangxuan.me
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "机器学习，学习机器，<br>自主机器之心，正在改变世界"
-sidebar-avatar: /img/myhead1.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "Deep learning，<br>自主机器之心，正在改变世界"
+sidebar-avatar: /img/myhead2.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -87,37 +87,16 @@ service-worker: true
 # Friends
 friends: [
     {
-    #     title: "Su",
-    #     href: "http://su.gallery/"
-    # },{
-        title: "乱序",
-        href: "http://mida.re/"
+        title: "Google",
+        href: "http://www.google.com/"
     },{
-        title: "前端外刊评论",
-        href: "http://qianduan.guru/"
+        title: "Baidu",
+        href: "http://www.baidu.com/"
     },{
-        title: "天镶的博客",
-        href: "http://lingyu.wang/"
-    },{
-        title: "Luke 的自留地",
-        href: "http://hmqk1995.github.io"
-    },{
-        title: "Ebn's Blog",
-        href: "http://ebnbin.com/"
-    },{
-        title: "SmdCn's Blog",
-        href: "http://blog.smdcn.net"
-    },{
-        title: "解旻的博客",
-        href: "http://xieminis.me/"
-    },{
-        title: "DHong Say",
-        href: "http://dhong.co"
-    },{
-        title: "尹峰以为",
-        href: "http://ingf.github.io/"
-    },{
-        title: "前端神盾局",
-        href: "http://wepiaofei.github.io/blog/"
+        title: "Weibo",
+        href: "http://weibo.com/"
+    }, {
+        title: "Zhihu",
+        href: "http://zhihu.com/"
     }
 ]
