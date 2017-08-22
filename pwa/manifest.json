@@ -1,7 +1,7 @@
 {
-  "name": "Hux Blog",
-  "short_name": "Hux Blog",
-  "description": "About an engineer & designer who loves web.",
+  "name": "Nova Blog",
+  "short_name": "Nova Blog",
+  "description": "About an data scientist & AI engineer who loves autonomous machine.",
   "icons": [{
     "src": "icons/128.png",
     "sizes": "128x128",

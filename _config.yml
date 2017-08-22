@@ -3,7 +3,7 @@ title: Nova Blog
 SEOTitle: Nova的博客 | Nova Blog
 header-img: img/home-bg.jpg
 email: zlxy9892@163.com
-description: "关于\'机器学习\'与\'学习机器\' | Nova，Machine Learning & Data Mining Lover, Learning Algorithm Designer | 这里是 @Nova 的个人博客，与你一起发现自主学习的魅力。"
+description: "关于\'机器学习\'与\'学习机器\' | Nova，Machine Learning & Data Mining Lover, AI Algorithm Engineer | 这里是 @Nova 的个人博客，与你一起发现自主学习机器的魅力。"
 keyword: "Nova, Neutron, Diablo"
 url: "https://zlxy9892.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
@@ -15,8 +15,8 @@ RSS: false
 weibo_username:     jerrywinning
 zhihu_username:     zhang-lei-18-98
 github_username:    zlxy9892
-twitter_username:   zhanglei
-#facebook_username:  huxpro
+twitter_username:   zlxy9892@live.com
+facebook_username:  zlxy9892@live.com
 # linkedin_username:  firstname-lastname-idxxxx
 
 
