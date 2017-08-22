@@ -1,9 +1,24 @@
-#一点点说明
+#Clean Blog by Start Bootstrap - Jekyll Version
 
-这是[relaxcoffee.com](https://zlxy9892.github.io/relaxcoffee/)的示例代码，如果你看了
+The official Jekyll version of the Clean Blog theme by [Start Bootstrap](http://startbootstrap.com/).
 
-* 马上动手，很赞
-* 感谢认可
-* 想复用我的设计，没问题，标个出处就好啦
-* 转载也没问题，标个出处呗少年
-* 恩，认真的童鞋最可爱啦~
+###[View Live Demo &rarr;](http://blackrockdigital.github.io/startbootstrap-clean-blog-jekyll/)
+
+## Before You Begin
+
+In the _config.yml file, the base URL is set to /startbootstrap-clean-blog-jekyll which is this themes gh-pages preview. It's recommended that you remove the base URL before working with this theme locally!
+
+It should look like this:
+`baseurl: ""`
+
+## What's Included
+
+A full Jekyll environment is included with this theme. If you have Jekyll installed, simply run `jekyll serve` in your command line and preview the build in your browser. You can use `jekyll serve --watch` to watch for changes in the source files as well.
+
+A Grunt environment is also included. There are a number of tasks it performs like minification of the JavaScript, compiling of the LESS files, adding banners to apply the MIT license, and watching for changes. Run the grunt default task by entering `grunt` into your command line which will build the files. You can use `grunt watch` if you are working on the JavaScript or the LESS.
+
+You can run `jekyll serve --watch` and `grunt watch` at the same time to watch for changes and then build them all at once.
+
+## Support
+
+Visit Clean Blog's template overview page on Start Bootstrap at http://startbootstrap.com/template-overviews/clean-blog/ and leave a comment, email feedback@startbootstrap.com, or open an issue here on GitHub for support.
