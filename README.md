@@ -1,7 +1,6 @@
-#Nova Blog
+# Nova Blog
 
-###[View Nova Blog &rarr;](https://zlxy9892.github.io)
-
+### [Welcome to Nova World! &rarr;](https://zlxy9892.github.io)
 
 
 
