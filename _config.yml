@@ -5,7 +5,7 @@ header-img: img/home/home-bg-10.jpg
 email: zlxy9892@163.com
 description: "关于\'机器学习\'与\'学习机器\' | Nova，Machine Learning & Data Mining Lover, AI Algorithm Engineer | 这里是 @Nova 的个人博客，与你一起发现自主学习机器的魅力。"
 keyword: "Nova, Neutron, Diablo"
-url: "https://novasky.top/"              # your host, for absolute URL
+url: "novasky.top"                      # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 markdown: maruku
