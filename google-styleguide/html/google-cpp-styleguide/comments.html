@@ -1,0 +1,539 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8. 注释 &mdash; Google 开源项目风格指南</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Google 开源项目风格指南" href="../index.html"/>
+        <link rel="up" title="C++ 风格指南 - 内容目录" href="contents.html"/>
+        <link rel="next" title="9. 格式" href="formatting.html"/>
+        <link rel="prev" title="7. 命名约定" href="naming.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../contents.html" class="icon icon-home"> Google 开源项目风格指南
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="contents.html">C++ 风格指南 - 内容目录</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html">0. 扉页</a></li>
+<li class="toctree-l2"><a class="reference internal" href="headers.html">1. 头文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scoping.html">2. 作用域</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classes.html">3. 类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">4. 函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="magic.html">5. 来自 Google 的奇技</a></li>
+<li class="toctree-l2"><a class="reference internal" href="others.html">5. 其他 C++ 特性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naming.html">7. 命名约定</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8. 注释</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">8.1. 注释风格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">8.2. 文件注释</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">法律公告和作者信息</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">文件内容</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#class-comments">8.3. 类注释</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">8.4. 函数注释</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8">函数声明</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">函数定义</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">8.5. 变量注释</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id11">类数据成员</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">全局变量</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">8.6. 实现注释</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id14">代码前注释</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">行注释</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">函数参数注释</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">不允许的行为</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">8.8. 标点, 拼写和语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#todo">8.8. TODO 注释</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">8.9. 弃用注释</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#yulefox">译者 (YuleFox) 笔记</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="formatting.html">9. 格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html">10. 规则特例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="end.html">11. 结束语</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../google-objc-styleguide/contents.html">Objective-C 风格指南 - 内容目录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../google-python-styleguide/contents.html">Python 风格指南 - 内容目录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../google-shell-styleguide/contents.html">Shell 风格指南 - 内容目录</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../contents.html">Google 开源项目风格指南</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../contents.html">Docs</a> &raquo;</li>
+        
+          <li><a href="contents.html">C++ 风格指南 - 内容目录</a> &raquo;</li>
+        
+      <li>8. 注释</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/google-cpp-styleguide/comments.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>8. 注释</h1>
+<p>注释虽然写起来很痛苦, 但对保证代码可读性至关重要. 下面的规则描述了如何注释以及在哪儿注释. 当然也要记住: 注释固然很重要, 但最好的代码应当本身就是文档. 有意义的类型名和变量名, 要远胜过要用注释解释的含糊不清的名字.</p>
+<p>你写的注释是给代码读者看的, 也就是下一个需要理解你的代码的人. 所以慷慨些吧, 下一个读者可能就是你!</p>
+<div class="section" id="id2">
+<h2>8.1. 注释风格</h2>
+<p><strong>总述</strong></p>
+<p>使用 <code class="docutils literal"><span class="pre">//</span></code> 或 <code class="docutils literal"><span class="pre">/*</span> <span class="pre">*/</span></code>, 统一就好.</p>
+<p><strong>说明</strong></p>
+<p><code class="docutils literal"><span class="pre">//</span></code> 或 <code class="docutils literal"><span class="pre">/*</span> <span class="pre">*/</span></code> 都可以; 但 <code class="docutils literal"><span class="pre">//</span></code> <em>更</em> 常用. 要在如何注释及注释风格上确保统一.</p>
+</div>
+<div class="section" id="id3">
+<h2>8.2. 文件注释</h2>
+<p><strong>总述</strong></p>
+<p>在每一个文件开头加入版权公告.</p>
+<p>文件注释描述了该文件的内容. 如果一个文件只声明, 或实现, 或测试了一个对象, 并且这个对象已经在它的声明处进行了详细的注释, 那么就没必要再加上文件注释. 除此之外的其他文件都需要文件注释.</p>
+<p><strong>说明</strong></p>
+<div class="section" id="id4">
+<h3>法律公告和作者信息</h3>
+<p>每个文件都应该包含许可证引用. 为项目选择合适的许可证版本.(比如, Apache 2.0, BSD, LGPL, GPL)</p>
+<p>如果你对原始作者的文件做了重大修改, 请考虑删除原作者信息.</p>
+</div>
+<div class="section" id="id5">
+<h3>文件内容</h3>
+<p>如果一个 <code class="docutils literal"><span class="pre">.h</span></code> 文件声明了多个概念, 则文件注释应当对文件的内容做一个大致的说明, 同时说明各概念之间的联系. 一个一到两行的文件注释就足够了, 对于每个概念的详细文档应当放在各个概念中, 而不是文件注释中.</p>
+<p>不要在 <code class="docutils literal"><span class="pre">.h</span></code> 和 <code class="docutils literal"><span class="pre">.cc</span></code> 之间复制注释, 这样的注释偏离了注释的实际意义.</p>
+</div>
+</div>
+<div class="section" id="class-comments">
+<span id="id6"></span><h2>8.3. 类注释</h2>
+<p><strong>总述</strong></p>
+<p>每个类的定义都要附带一份注释, 描述类的功能和用法, 除非它的功能相当明显.</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="c1">// Iterates over the contents of a GargantuanTable.</span>
+<span class="c1">// Example:</span>
+<span class="c1">//    GargantuanTableIterator* iter = table-&gt;NewIterator();</span>
+<span class="c1">//    for (iter-&gt;Seek(&quot;foo&quot;); !iter-&gt;done(); iter-&gt;Next()) {</span>
+<span class="c1">//      process(iter-&gt;key(), iter-&gt;value());</span>
+<span class="c1">//    }</span>
+<span class="c1">//    delete iter;</span>
+<span class="k">class</span> <span class="nc">GargantuanTableIterator</span> <span class="p">{</span>
+  <span class="p">...</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p><strong>说明</strong></p>
+<p>类注释应当为读者理解如何使用与何时使用类提供足够的信息, 同时应当提醒读者在正确使用此类时应当考虑的因素. 如果类有任何同步前提, 请用文档说明. 如果该类的实例可被多线程访问, 要特别注意文档说明多线程环境下相关的规则和常量使用.</p>
+<p>如果你想用一小段代码演示这个类的基本用法或通常用法, 放在类注释里也非常合适.</p>
+<p>如果类的声明和定义分开了(例如分别放在了 <code class="docutils literal"><span class="pre">.h</span></code> 和 <code class="docutils literal"><span class="pre">.cc</span></code> 文件中), 此时, 描述类用法的注释应当和接口定义放在一起, 描述类的操作和实现的注释应当和实现放在一起.</p>
+</div>
+<div class="section" id="id7">
+<h2>8.4. 函数注释</h2>
+<p><strong>总述</strong></p>
+<p>函数声明处的注释描述函数功能; 定义处的注释描述函数实现.</p>
+<p><strong>说明</strong></p>
+<div class="section" id="id8">
+<h3>函数声明</h3>
+<p>基本上每个函数声明处前都应当加上注释, 描述函数的功能和用途. 只有在函数的功能简单而明显时才能省略这些注释(例如, 简单的取值和设值函数). 注释使用叙述式 (&#8220;Opens the file&#8221;) 而非指令式 (&#8220;Open the file&#8221;); 注释只是为了描述函数, 而不是命令函数做什么. 通常, 注释不会描述函数如何工作. 那是函数定义部分的事情.</p>
+<p>函数声明处注释的内容:</p>
+<ul class="simple">
+<li>函数的输入输出.</li>
+<li>对类成员函数而言: 函数调用期间对象是否需要保持引用参数, 是否会释放这些参数.</li>
+<li>函数是否分配了必须由调用者释放的空间.</li>
+<li>参数是否可以为空指针.</li>
+<li>是否存在函数使用上的性能隐患.</li>
+<li>如果函数是可重入的, 其同步前提是什么?</li>
+</ul>
+<p>举例如下:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="c1">// Returns an iterator for this table.  It is the client&#39;s</span>
+<span class="c1">// responsibility to delete the iterator when it is done with it,</span>
+<span class="c1">// and it must not use the iterator once the GargantuanTable object</span>
+<span class="c1">// on which the iterator was created has been deleted.</span>
+<span class="c1">//</span>
+<span class="c1">// The iterator is initially positioned at the beginning of the table.</span>
+<span class="c1">//</span>
+<span class="c1">// This method is equivalent to:</span>
+<span class="c1">//    Iterator* iter = table-&gt;NewIterator();</span>
+<span class="c1">//    iter-&gt;Seek(&quot;&quot;);</span>
+<span class="c1">//    return iter;</span>
+<span class="c1">// If you are going to immediately seek to another place in the</span>
+<span class="c1">// returned iterator, it will be faster to use NewIterator()</span>
+<span class="c1">// and avoid the extra seek.</span>
+<span class="n">Iterator</span><span class="o">*</span> <span class="nf">GetIterator</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>但也要避免罗罗嗦嗦, 或者对显而易见的内容进行说明. 下面的注释就没有必要加上 &#8220;否则返回 false&#8221;, 因为已经暗含其中了:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="c1">// Returns true if the table cannot hold any more entries.</span>
+<span class="kt">bool</span> <span class="nf">IsTableFull</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>注释函数重载时, 注释的重点应该是函数中被重载的部分, 而不是简单的重复被重载的函数的注释. 多数情况下, 函数重载不需要额外的文档, 因此也没有必要加上注释.</p>
+<p>注释构造/析构函数时, 切记读代码的人知道构造/析构函数的功能, 所以 &#8220;销毁这一对象&#8221; 这样的注释是没有意义的. 你应当注明的是注明构造函数对参数做了什么 (例如, 是否取得指针所有权) 以及析构函数清理了什么. 如果都是些无关紧要的内容, 直接省掉注释. 析构函数前没有注释是很正常的.</p>
+</div>
+<div class="section" id="id9">
+<h3>函数定义</h3>
+<p>如果函数的实现过程中用到了很巧妙的方式, 那么在函数定义处应当加上解释性的注释. 例如, 你所使用的编程技巧, 实现的大致步骤, 或解释如此实现的理由. 举个例子, 你可以说明为什么函数的前半部分要加锁而后半部分不需要.</p>
+<p><em>不要</em> 从 <code class="docutils literal"><span class="pre">.h</span></code> 文件或其他地方的函数声明处直接复制注释. 简要重述函数功能是可以的, 但注释重点要放在如何实现上.</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>8.5. 变量注释</h2>
+<p><strong>总述</strong></p>
+<p>通常变量名本身足以很好说明变量用途. 某些情况下, 也需要额外的注释说明.</p>
+<p><strong>说明</strong></p>
+<div class="section" id="id11">
+<h3>类数据成员</h3>
+<p>每个类数据成员 (也叫实例变量或成员变量) 都应该用注释说明用途. 如果有非变量的参数(例如特殊值, 数据成员之间的关系, 生命周期等)不能够用类型与变量名明确表达, 则应当加上注释. 然而, 如果变量类型与变量名已经足以描述一个变量, 那么就不再需要加上注释.</p>
+<p>特别地, 如果变量可以接受 <code class="docutils literal"><span class="pre">NULL</span></code> 或 <code class="docutils literal"><span class="pre">-1</span></code> 等警戒值, 须加以说明. 比如:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="k">private</span><span class="o">:</span>
+ <span class="c1">// Used to bounds-check table accesses. -1 means</span>
+ <span class="c1">// that we don&#39;t yet know how many entries the table has.</span>
+ <span class="kt">int</span> <span class="n">num_total_entries_</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>全局变量</h3>
+<p>和数据成员一样, 所有全局变量也要注释说明含义及用途, 以及作为全局变量的原因. 比如:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="c1">// The total number of tests cases that we run through in this regression test.</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">kNumTestCases</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id13">
+<h2>8.6. 实现注释</h2>
+<p><strong>总述</strong></p>
+<p>对于代码中巧妙的, 晦涩的, 有趣的, 重要的地方加以注释.</p>
+<p><strong>说明</strong></p>
+<div class="section" id="id14">
+<h3>代码前注释</h3>
+<p>巧妙或复杂的代码段前要加注释. 比如:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="c1">// Divide result by two, taking into account that x</span>
+<span class="c1">// contains the carry from the add.</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">result</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="o">*</span><span class="n">result</span><span class="p">)[</span><span class="n">i</span><span class="p">];</span>
+  <span class="p">(</span><span class="o">*</span><span class="n">result</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="n">x</span> <span class="o">&amp;=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id15">
+<h3>行注释</h3>
+<p>比较隐晦的地方要在行尾加入注释. 在行尾空两格进行注释. 比如:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="c1">// If we have enough memory, mmap the data portion too.</span>
+<span class="n">mmap_budget</span> <span class="o">=</span> <span class="n">max</span><span class="o">&lt;</span><span class="n">int64</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">mmap_budget</span> <span class="o">-</span> <span class="n">index_</span><span class="o">-&gt;</span><span class="n">length</span><span class="p">());</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">mmap_budget</span> <span class="o">&gt;=</span> <span class="n">data_size_</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">MmapData</span><span class="p">(</span><span class="n">mmap_chunk_bytes</span><span class="p">,</span> <span class="n">mlock</span><span class="p">))</span>
+  <span class="k">return</span><span class="p">;</span>  <span class="c1">// Error already logged.</span>
+</pre></div>
+</div>
+<p>注意, 这里用了两段注释分别描述这段代码的作用, 和提示函数返回时错误已经被记入日志.</p>
+<p>如果你需要连续进行多行注释, 可以使之对齐获得更好的可读性:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="n">DoSomething</span><span class="p">();</span>                  <span class="c1">// Comment here so the comments line up.</span>
+<span class="n">DoSomethingElseThatIsLonger</span><span class="p">();</span>  <span class="c1">// Two spaces between the code and the comment.</span>
+<span class="p">{</span> <span class="c1">// One space before comment when opening a new scope is allowed,</span>
+  <span class="c1">// thus the comment lines up with the following comments and code.</span>
+  <span class="n">DoSomethingElse</span><span class="p">();</span>  <span class="c1">// Two spaces before line comments normally.</span>
+<span class="p">}</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">list</span><span class="p">{</span>
+                    <span class="c1">// Comments in braced lists describe the next element...</span>
+                    <span class="s">&quot;First item&quot;</span><span class="p">,</span>
+                    <span class="c1">// .. and should be aligned appropriately.</span>
+<span class="s">&quot;Second item&quot;</span><span class="p">};</span>
+<span class="n">DoSomething</span><span class="p">();</span> <span class="cm">/* For trailing block comments, one space is fine. */</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h3>函数参数注释</h3>
+<p>如果函数参数的意义不明显, 考虑用下面的方式进行弥补:</p>
+<ul class="simple">
+<li>如果参数是一个字面常量, 并且这一常量在多处函数调用中被使用, 用以推断它们一致, 你应当用一个常量名让这一约定变得更明显, 并且保证这一约定不会被打破.</li>
+<li>考虑更改函数的签名, 让某个 <code class="docutils literal"><span class="pre">bool</span></code> 类型的参数变为 <code class="docutils literal"><span class="pre">enum</span></code> 类型, 这样可以让这个参数的值表达其意义.</li>
+<li>如果某个函数有多个配置选项, 你可以考虑定义一个类或结构体以保存所有的选项, 并传入类或结构体的实例. 这样的方法有许多优点, 例如这样的选项可以在调用处用变量名引用, 这样就能清晰地表明其意义. 同时也减少了函数参数的数量, 使得函数调用更易读也易写. 除此之外, 以这样的方式, 如果你使用其他的选项, 就无需对调用点进行更改.</li>
+<li>用具名变量代替大段而复杂的嵌套表达式.</li>
+<li>万不得已时, 才考虑在调用点用注释阐明参数的意义.</li>
+</ul>
+<p>比如下面的示例的对比:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="c1">// What are these arguments?</span>
+<span class="k">const</span> <span class="n">DecimalNumber</span> <span class="n">product</span> <span class="o">=</span> <span class="n">CalculateProduct</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>和</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="n">ProductOptions</span> <span class="n">options</span><span class="p">;</span>
+<span class="n">options</span><span class="p">.</span><span class="n">set_precision_decimals</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+<span class="n">options</span><span class="p">.</span><span class="n">set_use_cache</span><span class="p">(</span><span class="n">ProductOptions</span><span class="o">::</span><span class="n">kDontUseCache</span><span class="p">);</span>
+<span class="k">const</span> <span class="n">DecimalNumber</span> <span class="n">product</span> <span class="o">=</span>
+    <span class="n">CalculateProduct</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="cm">/*completion_callback=*/</span><span class="k">nullptr</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>哪个更清晰一目了然.</p>
+</div>
+<div class="section" id="id17">
+<h3>不允许的行为</h3>
+<p>不要描述显而易见的现象, <em>永远不要</em> 用自然语言翻译代码作为注释, 除非即使对深入理解 C++ 的读者来说代码的行为都是不明显的. 要假设读代码的人 C++ 水平比你高, 即便他/她可能不知道你的用意:</p>
+<p>你所提供的注释应当解释代码 <em>为什么</em> 要这么做和代码的目的, 或者最好是让代码自文档化.</p>
+<p>比较这样的注释:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="c1">// Find the element in the vector.  &lt;-- 差: 这太明显了!</span>
+<span class="k">auto</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">element</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">iter</span> <span class="o">!=</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span>
+  <span class="n">Process</span><span class="p">(</span><span class="n">element</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>和这样的注释:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="c1">// Process &quot;element&quot; unless it was already processed.</span>
+<span class="k">auto</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">element</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">iter</span> <span class="o">!=</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span>
+  <span class="n">Process</span><span class="p">(</span><span class="n">element</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>自文档化的代码根本就不需要注释. 上面例子中的注释对下面的代码来说就是毫无必要的:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">IsAlreadyProcessed</span><span class="p">(</span><span class="n">element</span><span class="p">))</span> <span class="p">{</span>
+  <span class="n">Process</span><span class="p">(</span><span class="n">element</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id18">
+<h2>8.8. 标点, 拼写和语法</h2>
+<p><strong>总述</strong></p>
+<p>注意标点, 拼写和语法; 写的好的注释比差的要易读的多.</p>
+<p><strong>说明</strong></p>
+<p>注释的通常写法是包含正确大小写和结尾句号的完整叙述性语句. 大多数情况下, 完整的句子比句子片段可读性更高. 短一点的注释, 比如代码行尾注释, 可以随意点, 但依然要注意风格的一致性.</p>
+<p>虽然被别人指出该用分号时却用了逗号多少有些尴尬, 但清晰易读的代码还是很重要的. 正确的标点, 拼写和语法对此会有很大帮助.</p>
+</div>
+<div class="section" id="todo">
+<h2>8.8. TODO 注释</h2>
+<p><strong>总述</strong></p>
+<p>对那些临时的, 短期的解决方案, 或已经够好但仍不完美的代码使用 <code class="docutils literal"><span class="pre">TODO</span></code> 注释.</p>
+<p><code class="docutils literal"><span class="pre">TODO</span></code> 注释要使用全大写的字符串 <code class="docutils literal"><span class="pre">TODO</span></code>, 在随后的圆括号里写上你的名字, 邮件地址, bug ID, 或其它身份标识和与这一 <code class="docutils literal"><span class="pre">TODO</span></code> 相关的 issue. 主要目的是让添加注释的人 (也是可以请求提供更多细节的人) 可根据规范的 <code class="docutils literal"><span class="pre">TODO</span></code> 格式进行查找. 添加 <code class="docutils literal"><span class="pre">TODO</span></code> 注释并不意味着你要自己来修正, 因此当你加上带有姓名的 <code class="docutils literal"><span class="pre">TODO</span></code> 时, 一般都是写上自己的名字.</p>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="c1">// TODO(kl@gmail.com): Use a &quot;*&quot; here for concatenation operator.</span>
+<span class="c1">// TODO(Zeke) change this to use relations.</span>
+<span class="c1">// TODO(bug 12345): remove the &quot;Last visitors&quot; feature</span>
+</pre></div>
+</div>
+<p>如果加 <code class="docutils literal"><span class="pre">TODO</span></code> 是为了在 &#8220;将来某一天做某事&#8221;, 可以附上一个非常明确的时间 &#8220;Fix by November 2005&#8221;), 或者一个明确的事项 (&#8220;Remove this code when all clients can handle XML responses.&#8221;).</p>
+</div>
+<div class="section" id="id19">
+<h2>8.9. 弃用注释</h2>
+<p><strong>总述</strong></p>
+<p>通过弃用注释（<code class="docutils literal"><span class="pre">DEPRECATED</span></code> comments）以标记某接口点已弃用.</p>
+<p>您可以写上包含全大写的 <code class="docutils literal"><span class="pre">DEPRECATED</span></code> 的注释, 以标记某接口为弃用状态. 注释可以放在接口声明前, 或者同一行.</p>
+<p>在 <code class="docutils literal"><span class="pre">DEPRECATED</span></code> 一词后, 在括号中留下您的名字, 邮箱地址以及其他身份标识.</p>
+<p>弃用注释应当包涵简短而清晰的指引, 以帮助其他人修复其调用点. 在 C++ 中, 你可以将一个弃用函数改造成一个内联函数, 这一函数将调用新的接口.</p>
+<p>仅仅标记接口为 <code class="docutils literal"><span class="pre">DEPRECATED</span></code> 并不会让大家不约而同地弃用, 您还得亲自主动修正调用点（callsites）, 或是找个帮手.</p>
+<p>修正好的代码应该不会再涉及弃用接口点了, 着实改用新接口点. 如果您不知从何下手, 可以找标记弃用注释的当事人一起商量.</p>
+</div>
+<div class="section" id="yulefox">
+<h2>译者 (YuleFox) 笔记</h2>
+<ol class="arabic simple">
+<li>关于注释风格, 很多 C++ 的 coders 更喜欢行注释, C coders 或许对块注释依然情有独钟, 或者在文件头大段大段的注释时使用块注释;</li>
+<li>文件注释可以炫耀你的成就, 也是为了捅了篓子别人可以找你;</li>
+<li>注释要言简意赅, 不要拖沓冗余, 复杂的东西简单化和简单的东西复杂化都是要被鄙视的;</li>
+<li>对于 Chinese coders 来说, 用英文注释还是用中文注释, it is a problem, 但不管怎样, 注释是为了让别人看懂, 难道是为了炫耀编程语言之外的你的母语或外语水平吗；</li>
+<li>注释不要太乱, 适当的缩进才会让人乐意看. 但也没有必要规定注释从第几列开始 (我自己写代码的时候总喜欢这样), UNIX/LINUX 下还可以约定是使用 tab 还是 space, 个人倾向于 space;</li>
+<li>TODO 很不错, 有时候, 注释确实是为了标记一些未完成的或完成的不尽如人意的地方, 这样一搜索, 就知道还有哪些活要干, 日志都省了.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="formatting.html" class="btn btn-neutral float-right" title="9. 格式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="naming.html" class="btn btn-neutral" title="7. 命名约定" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
