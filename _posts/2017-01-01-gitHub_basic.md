@@ -32,7 +32,7 @@ git clone url
 ```
 - add
 ```shell
-git add .
+git add -A
 ```
 - commit
 ```shell
@@ -40,9 +40,15 @@ git commit -m "changes log"
 ```
 - push
 ```shell
-git push origin
+git push origin <branch>
 ```
---- 基本这四个操作可以完成在已有项目基础上的任务（当然，是不包含多人协作，只自己一人维护开发的情况）。
+- pull
+
+```shell
+git pull origin <branch>
+```
+
+--- 基本上述的几个操作可以完成在已有项目基础上的任务（当然，是不包含多人协作，只自己一人维护开发的情况）。
 
 ### 2.2 在本地初始化项目并放置 GitHub 上管理
 
