@@ -87,6 +87,6 @@
 - First Prize in Outstanding Graduate Thesis Award of Jiangsu province in China, 2016. Awarded by 
 the Ministry of Education.
 
-- Global GIS Young Scholar Award (Jack Dangermond’s special award), in San Diego, USA, 2015 (No. 11 in: http://www.arcgis.com/apps/MapTour/index.html?appid=a383612f79354488929beabcd266cd77)
+- Global GIS Young Scholar Award (Jack Dangermond’s special award), in San Diego, USA, 2015 (No. 11 in: [Link](http://www.arcgis.com/apps/MapTour/index.html?appid=a383612f79354488929beabcd266cd77))
 
 - First Prize in the ESRI GIS Spatial Analysis Contest in China (team leader), 2014. Awarded by ESRI and Geographical Society of China
