@@ -1,9 +1,9 @@
 <table border="0">
   <tr>
-    <td width="20%">
+    <td width="30%">
       <img src="./img/L.Z.jpg" width="100%">
     </td>
-    <td width="80%" align="center" valign="middle">
+    <td width="70%" align="center" valign="middle">
       <h1><font color="#005AB5">Lei Zhang (张磊)</font></h1>
       <b>PhD student</b><br/>
       <b>School of Geography and Ocean Science</b><br/>
@@ -36,8 +36,8 @@
 <a name="Publications"></a>
 
 # Publications
-- **Google Scholar**: https://scholar.google.com/citations?user=o2pRYDYAAAAJ&hl=en
-- **Research Gate**: https://www.researchgate.net/profile/Lei-Zhang-360
+- **Google Scholar**: [https://scholar.google.com/citations?user=o2pRYDYAAAAJ&hl=en](https://scholar.google.com/citations?user=o2pRYDYAAAAJ&hl=en)
+- **Research Gate**: [https://www.researchgate.net/profile/Lei-Zhang-360](https://www.researchgate.net/profile/Lei-Zhang-360)
 
 ## First Author:
 - **Zhang, L.** et al. Direct and indirect impacts of urbanization on vegetation growth across the world’s cities. (under review)
