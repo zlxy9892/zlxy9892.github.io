@@ -39,7 +39,7 @@
 - **Google Scholar**: [https://scholar.google.com/citations?user=o2pRYDYAAAAJ&hl=en](https://scholar.google.com/citations?user=o2pRYDYAAAAJ&hl=en)
 - **Research Gate**: [https://www.researchgate.net/profile/Lei-Zhang-360](https://www.researchgate.net/profile/Lei-Zhang-360)
 
-## First Author:
+## As first/corresponding author:
 - **Zhang, L.** et al. Direct and indirect impacts of urbanization on vegetation growth across the world’s cities. (under review)
 
 - **Zhang, L.** et al. An adaptive uncertainty-guided sampling method for geospatial prediction and its application in digital soil mapping. (under review)
@@ -52,7 +52,7 @@
 
 - **张磊**, 朱阿兴, 琳杨, 秦承志, 刘军志, 刘雪琦, 2017. 基于分融策略的土壤采样设计方法. 土壤学报 54, 1079–1090.
 
-## Co-author:
+## As co-author:
 - Wu, Q., Miao, S., Huang, H., Guo, M., **Zhang, L.**, Yang, L., Zhou, C., 2022. Quantitative Analysis on Coastline Changes of Yangtze River Delta based on High Spatial Resolution Remote Sensing Images. Remote Sensing 14, 310. https://doi.org/10.3390/rs14020310
 
 - Guo, M., Yang, L., Shen, F., **Zhang, L.**, Li, A., Cai, Y., Zhou, C., 2022. Impact of socio-economic environment and its interaction on the initial spread of COVID-19 in mainland China. Geospatial Health 17. https://doi.org/10.4081/gh.2022.1060
