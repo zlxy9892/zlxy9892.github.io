@@ -82,7 +82,7 @@
 <a name="Awards"></a>
 
 # Honors & Awards
-- First Prize in Best Paper Award in conference of graduate students of geographic information science in China, 2017. Awarded by Geographical Society of China.
+- First Prize in Best Paper Award in conference of graduate students of geographic information science in Jiangsu, China, 2017. Awarded by Geographical Society of China.
 
 - First Prize in Outstanding Graduate Thesis Award of Jiangsu province in China, 2016. Awarded by 
 the Ministry of Education.
