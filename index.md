@@ -28,8 +28,8 @@
 <a name="Research"></a>
 
 # Research Interests
-- Geography, Remote sensing, GIScience
-- Vegetation and Soil, Soil organic carbon, Interactions between vegetation growth, soil, climate change, and human activities
+- Geoscience, Remote sensing, GIScience
+- Vegetation and Soil, Soil organic carbon, Interactions between vegetation, soil, climate change, and human activities
 - Geostatistics, Spatial predictive model, Digital soil mapping, Spatial sampling method
 - Machine learning, Deep learning
 
@@ -40,9 +40,11 @@
 - **Research Gate**: [https://www.researchgate.net/profile/Lei-Zhang-360](https://www.researchgate.net/profile/Lei-Zhang-360)
 
 ## As first/corresponding author:
-- **Zhang, L.** et al. Direct and indirect impacts of urbanization on vegetation growth across the world’s cities. (under review)
+- **Zhang, L.** et al. Direct and indirect impacts of urbanization on vegetation growth across the world’s cities (under review).
 
-- **Zhang, L.** et al. An adaptive uncertainty-guided sampling method for geospatial prediction and its application in digital soil mapping. (under review)
+- **Zhang, L.** et al. A CNN-LSTM model for soil organic carbon content prediction with long time series of MODIS-based phenological variables (under review).
+
+- **Zhang, L.** et al. An adaptive uncertainty-guided sampling method for geospatial prediction and its application in digital soil mapping (under review).
 
 - **Zhang, L.**, Yang, L., Cai, Y., Huang, H., Shi, J., Zhou, C., 2022. A multiple soil properties oriented representative sampling strategy for digital soil mapping. Geoderma 406, 115531. https://doi.org/10.1016/j.geoderma.2021.115531
 
