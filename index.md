@@ -76,9 +76,9 @@
 **Global urban vegetation analysis** <[Code](https://github.com/zlxy9892/Global_Urbanization_Impacts_on_Vegetation.git)>
 
 - A CNN-LSTM model for soil organic carbon content prediction using phenological variables \
-**CNN-LSTM model for SOC preditive mapping** <[Code]()>
+**A CNN-LSTM model for SOC preditive mapping** <[Code](https://github.com/zlxy9892/CNN-LSTM_for_DSM.git)>
 
-- Spatiotemporal causal convolutional network for predicting PM2.5 concentrations \
+- Spatiotemporal causal convolutional network for predicting air pullution (PM2.5) concentrations \
 **ST-CausalConvNet** <[Code](https://github.com/zlxy9892/ST-CausalConvNet.git)>
 
 <a name="Awards"></a>
