@@ -40,7 +40,7 @@
 - **Research Gate**: [https://www.researchgate.net/profile/Lei-Zhang-360](https://www.researchgate.net/profile/Lei-Zhang-360)
 
 ## As first/corresponding author:
-- **Zhang, L.** et al. Direct and indirect impacts of urbanization on vegetation growth across the world’s cities (under review).
+- **Zhang, L.**, Yang, L.,  Zohner C.M., Crowther, T.W., Li, M., Shen, F., Guo, M., Qin, J., Yao, L., Zhou, C., Direct and indirect impacts of urbanization on vegetation growth across the world’s cities. Science Advances (accept).
 
 - **Zhang, L.** et al. A CNN-LSTM model for soil organic carbon content prediction with long time series of MODIS-based phenological variables (under review).
 
