@@ -9,7 +9,7 @@
       <b>School of Geography and Ocean Science</b><br/>
       <b>Nanjing University</b><br/>
       <b>163 Xianlin Road, Qixia District, Nanjing 210023, China</b><br/>
-      <b>Email：zhanglei@smail.nju.edu.cn; zlxy9892@163.com</b><br/>
+      <b>Email：lei.zhang.geo@outlook.com; zhanglei@smail.nju.edu.cn</b><br/>
     </td>
   </tr>
 </table>
